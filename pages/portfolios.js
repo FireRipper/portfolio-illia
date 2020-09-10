@@ -1,12 +1,12 @@
 import React from 'react'
 import BaseLayout from '../components/layouts/base.layout'
 
-const Index = () => {
+const Portfolios = () => {
   return (
     <BaseLayout>
-      <h1>Index page</h1>
+      <h1>Portfolios page</h1>
     </BaseLayout>
   )
 }
 
-export default Index
+export default Portfolios

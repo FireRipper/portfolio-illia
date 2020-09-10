@@ -1,12 +1,12 @@
 import React from 'react'
 import BaseLayout from '../components/layouts/base.layout'
 
-const Index = () => {
+const About = () => {
   return (
     <BaseLayout>
-      <h1>Index page</h1>
+      <h1>About page</h1>
     </BaseLayout>
   )
 }
 
-export default Index
+export default About

@@ -1,27 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio Illia
+Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+but also the leap into electronic typesetting, remaining essentially unchanged.
+It was popularised in the 1960s with the release of Letraset sheets containing
+Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
+## How to install
+- Clone this repository on your PC
+- Run `npm install`
+- Run `npm run dev`
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Structure
 
-## Learn More
+- **node_modules** - libraries.
+- **components** - *.js files that contains react components with some content
+- **pages** - the files inside the `pages` directory can be used to define most common patterns.
+- **public** - static images, logo, icons
+- **styles** - css styles for page
 
-To learn more about Next.js, take a look at the following resources:
+## Using frameworks
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* [Next js](https://nextjs.org/) - The React framework for pre-rendering apps
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Build with
+
+* [Webpack](https://webpack.js.org/) - a static module bundler for JavaScript applications
 
 ## Deploy on Vercel
 
