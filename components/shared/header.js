@@ -1,25 +1,57 @@
-import React from 'react'
+import React, { useState } from 'react'
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  Nav,
+  NavItem
+} from 'reactstrap'
 import Link from 'next/link'
 
+const BsNavBrand  = ({ label }) => (
+  <Link href="/">
+    <a className="navbar-brand port-navbar-brand">{label}</a>
+  </Link>
+)
+
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false)
+  const navItems = [
+    { key: 'home', link: '/', title: 'Home' },
+    { key: 'about', link: '/about', title: 'About' },
+    { key: 'portfolios', link: '/portfolios', title: 'Portfolios' },
+    { key: 'blogs', link: '/blogs', title: 'Blogs' },
+    { key: 'cv', link: '/cv', title: 'Cv' }
+  ]
+
+  const renderNavItems = navItems.map(({ key, link, title }) => (
+    <NavItem key={key} className="port-navbar-item">
+      <Link href={link}>
+        <a className='nav-link port-navbar-link'>
+          {title}
+        </a>
+      </Link>
+    </NavItem>
+  ))
+
+  const toggle = () => setIsOpen(!isOpen)
+
   return (
-    <>
-      <Link href="/">
-        <a>Home</a>
-      </Link>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-      <Link href="/portfolios">
-        <a>Portfolios</a>
-      </Link>
-      <Link href="/blogs">
-        <a>Blogs</a>
-      </Link>
-      <Link href="/cv">
-        <a>Cv</a>
-      </Link>
-    </>
+    <div>
+      <Navbar
+        className='port-navbar port-default absolute'
+        color="transparent"
+        dark
+        light expand="md">
+        <BsNavBrand label='Illia Shabelnyk' />
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="mr-auto" navbar>
+            {renderNavItems}
+          </Nav>
+        </Collapse>
+      </Navbar>
+    </div>
   )
 }
 

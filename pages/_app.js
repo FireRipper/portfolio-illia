@@ -1,11 +1,13 @@
 import React from 'react'
 import NextNprogress from 'nextjs-progressbar'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import '../styles/main.scss'
 
-function PortfolioApp({ Component, pageProps }) {
+const PortfolioApp = ({ Component, pageProps }) => {
   return (
     <>
       <NextNprogress
-        color="#1890ff"
+        color="#fff"
         startPosition={0.3}
         stopDelayMs={200}
         height="3"
@@ -13,6 +15,17 @@ function PortfolioApp({ Component, pageProps }) {
       <Component {...pageProps} />
     </>
   )
+}
+
+PortfolioApp.getInitialProps = async ({ Component, ctx }) => {
+  // calls page's `getInitialProps` and fills `appProps.pageProps`
+  let pageProps = {}
+
+  if (Component.getInitialProps) {
+    pageProps = await Component.getInitialProps(ctx)
+  }
+
+  return { pageProps }
 }
 
 export default PortfolioApp
