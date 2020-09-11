@@ -14,6 +14,14 @@ const BsNavBrand  = ({ label }) => (
   </Link>
 )
 
+const LoginLink = () => (
+  <span className="nav-link port-navbar-link">Login</span>
+)
+
+const LogoutLink = () => (
+  <span className="nav-link port-navbar-link">Logout</span>
+)
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   const navItems = [
@@ -43,11 +51,27 @@ const Header = () => {
         color="transparent"
         dark
         light expand="md">
-        <BsNavBrand label='Illia Shabelnyk' />
+        <BsNavBrand label='Illia' />
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             {renderNavItems}
+          </Nav>
+          <Nav navbar>
+            <NavItem className="port-navbar-item">
+              <Link href={'/login'}>
+                <a className='nav-link port-navbar-link'>
+                 <LoginLink/>
+                </a>
+              </Link>
+            </NavItem>
+            <NavItem className="port-navbar-item">
+              <Link href={'/logout'}>
+                <a className='nav-link port-navbar-link'>
+                  <LogoutLink/>
+                </a>
+              </Link>
+            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
