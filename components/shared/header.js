@@ -8,7 +8,7 @@ import {
 } from 'reactstrap'
 import Link from 'next/link'
 
-const BsNavBrand  = ({ label }) => (
+const BsNavBrand = ({ label }) => (
   <Link href="/">
     <a className="navbar-brand port-navbar-brand">{label}</a>
   </Link>
@@ -59,24 +59,24 @@ const Header = () => {
           </Nav>
           <Nav navbar>
             <NavItem className="port-navbar-item">
-              <Link href={'/login'}>
-                <a className='nav-link port-navbar-link'>
-                 <LoginLink/>
-                </a>
-              </Link>
+              <a href={'/api/v1/login'} className='nav-link port-navbar-link'>
+                <LoginLink />
+              </a>
             </NavItem>
-            <NavItem className="port-navbar-item">
-              <Link href={'/logout'}>
-                <a className='nav-link port-navbar-link'>
-                  <LogoutLink/>
-                </a>
-              </Link>
-            </NavItem>
+
           </Nav>
         </Collapse>
       </Navbar>
     </div>
   )
 }
+
+// <NavItem className="port-navbar-item">
+//   <Link href={'/logout'}>
+//     <a className='nav-link port-navbar-link'>
+//       <LogoutLink/>
+//     </a>
+//   </Link>
+// </NavItem>
 
 export default Header
